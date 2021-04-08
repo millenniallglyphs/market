@@ -22,6 +22,7 @@ function IndexPage(props) {
   return (
     <div className="my-8">
       <div className="mt-4">
+        <h1>Testing</h1>
         <ProductsPage products={products} />
       </div>
     </div>
