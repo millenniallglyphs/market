@@ -16,12 +16,14 @@
     "@sanity/desk-tool",
     "@sanity/color-input",
     "vercel-deploy",
-    "@sanity/dashboard"
+    "@sanity/dashboard",
+    "dashboard-widget-vercel"
   ],
   "env": {
     "development": {
       "plugins": [
-        "@sanity/vision"
+        "@sanity/vision",
+        "dashboard-widget-vercel"
       ]
     }
   },
@@ -33,6 +35,10 @@
     {
       "implements": "part:@sanity/desk-tool/structure",
       "path": "./src/deskStructure"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "dashboardConfig.js"
     }
   ]
 }

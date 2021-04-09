@@ -17,5 +17,11 @@ export default {
       },
       layout: { width: "medium" },
     },
+    {
+      name: 'vercel',
+      layout: {
+        width: 'full', // full width is recommended!
+      },
+    },
   ],
 };
