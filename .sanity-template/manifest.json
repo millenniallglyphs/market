@@ -25,8 +25,8 @@
       "basePath": "/studio"
     },
     "envVars": {
-      "projectId": ["NEXT_PUBLIC_SANITY_PROJECT_ID"],
-      "dataset": ["NEXT_PUBLIC_SANITY_DATASET"]
+      "projectId": ["0r0vai9a"],
+      "dataset": ["production"]
     },
     "corsOrigins": [
       {
