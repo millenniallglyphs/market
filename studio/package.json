@@ -1,5 +1,5 @@
 {
-  "name": "sanity-nextjs-ecommerce-studio",
+  "name": "PAFM",
   "private": true,
   "version": "0.0.0",
   "description": "",
@@ -28,8 +28,7 @@
     "react-dom": "16.14.0",
     "react-icons": "^3.11.0",
     "react-moveable": "^0.22.6",
-    "resize-observer": "^1.0.0",
-    "sanity-plugin-vercel-deploy": "^1.1.0"
+    "resize-observer": "^1.0.0"
   },
   "devDependencies": {}
 }
