@@ -27,30 +27,9 @@ const hiddenDocTypes = (listItem) =>
 
 export default () =>
   S.list()
-    .title("Pulp Inc.")
+    .title("PAFM Web Editor")
     .items([
-      S.documentTypeListItem("product").title("Products"),
-      S.listItem()
-        .title("Website")
-        .icon(MdWeb)
-        .child(
-          S.list()
-            .title("Website")
-            .items([
-              S.listItem()
-                .title("Site configuration")
-                .icon(MdSettings)
-                .child(
-                  S.document()
-                    .title("Site configuration")
-                    .schemaType("siteConfig")
-                    .documentId("siteConfig")
-                ),
-              S.documentTypeListItem("route").title("Routes"),
-              S.documentTypeListItem("page").title("Pages"),
-            ])
-        ),
-      ads,
+      S.documentTypeListItem("vendor").title("Vendors"),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ]);
 
@@ -63,18 +42,11 @@ export const getDefaultDocumentNode = (props) => {
    * https://www.sanity.io/docs/structure-builder-reference#getdefaultdocumentnode-97e44ce262c9
    */
   const { schemaType } = props;
-  if (schemaType === "product") {
+  if (schemaType === "vendor") {
     return S.document().views([
       S.view.form(),
-      S.view.component(ProductsOverviewPreview).title("Products Overview"),
-      S.view.component(ProductPagePreview).title("Product Page"),
-    ]);
-  }
-  if (schemaType === "swag") {
-    return S.document().views([
-      S.view.form(),
-      S.view.component(TotebagPreview).title("Totebag"),
-      S.view.component(ShirtPreview).title("Shirt"),
+      S.view.component(ProductsOverviewPreview).title("Vendors Overview"),
+      S.view.component(ProductPagePreview).title("Vendor Page"),
     ]);
   }
   return S.document().views([S.view.form()]);
