@@ -18,6 +18,9 @@ import siteConfig from "./documents/siteConfig";
 import person from "./documents/person";
 import popup from "./documents/popup";
 
+//about page
+import about from "./about"
+
 // Object types
 import blockContent from "./objects/blockContent";
 import cta from "./objects/cta";
@@ -58,6 +61,7 @@ export default createSchema({
     route,
     siteConfig,
     person,
+    about,
     // When added to this list, object types can be used as
     cta,
     figure,

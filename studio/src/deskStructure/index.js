@@ -29,7 +29,29 @@ export default () =>
   S.list()
     .title("PAFM Web Editor")
     .items([
-      S.documentTypeListItem("vendor").title("Vendors"),
+      S.listItem()
+        .title('Pages')
+        .child(
+          S.list()
+          .title('Pages')
+          .items([
+            S.listItem()
+              .title('About')
+              .child(
+                S.document()
+                  .schemaType('about')
+                  .documentId('about')
+              ),
+            S.listItem()
+              .title('Vendors')
+              .child(
+                S.list()
+                .items ([
+                  S.documentTypeListItem("vendor").title("Vendors")
+                ])
+              )
+          ])
+        ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ]);
 
