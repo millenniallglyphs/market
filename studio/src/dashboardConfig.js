@@ -1,27 +1,24 @@
 export default {
   widgets: [
     {
-      name: "sanity-tutorials",
-      options: {
-        templateRepoId: "sanity-io/sanity-template-nextjs-ecommerce",
-      },
+      name: 'project-info'
     },
-    { name: "structure-menu" },
-    { name: "project-users", layout: { height: "auto" } },
     {
-      name: "document-list",
+      name: 'project-users'
+    },
+    {
+      name: 'document-list',
       options: {
-        title: "Recent products",
-        order: "_createdAt desc",
-        types: ["product"],
-      },
-      layout: { width: "medium" },
+        title: 'Vendors',
+        query: '*[_type == "vendor"]',
+        types: ['vendors']
+      }
     },
     {
       name: 'vercel',
       layout: {
         width: 'full', // full width is recommended!
-      },
-    },
-  ],
-};
+      }
+    }
+  ]
+}

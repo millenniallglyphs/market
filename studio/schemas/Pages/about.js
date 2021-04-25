@@ -12,6 +12,12 @@ export default {
         name: 'description',
         title: 'About the PAFM',
         type: 'text'
-      }
+      },
+      {
+        name: "content",
+        type: "array",
+        title: "Add Vendor",
+        of: [{ type: "vendor" }],
+      },
     ]
   }

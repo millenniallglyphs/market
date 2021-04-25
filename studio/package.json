@@ -32,6 +32,7 @@
     "react-icons": "^3.11.0",
     "react-moveable": "^0.22.6",
     "resize-observer": "^1.0.0",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
     "sanity-plugin-dashboard-widget-vercel": "^1.1.0",
     "sanity-plugin-vercel-deploy": "^1.1.0"
   },

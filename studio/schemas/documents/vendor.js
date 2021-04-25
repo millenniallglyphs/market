@@ -1,7 +1,10 @@
+import { MdStoreMallDirectory } from "react-icons/md"
+
 export default {
   name: "vendor",
   title: "Vendor",
   type: "document",
+  icon: MdStoreMallDirectory,
   fields: [
     {
       name: "title",

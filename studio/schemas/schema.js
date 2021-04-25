@@ -17,9 +17,11 @@ import route from "./documents/route";
 import siteConfig from "./documents/siteConfig";
 import person from "./documents/person";
 import popup from "./documents/popup";
+import marketDoc from "./documents/marketDoc"
 
-//about page
-import about from "./about"
+// page blocks
+import about from "./Pages/about";
+import contentUnit from "./Pages/contentUnit";
 
 // Object types
 import blockContent from "./objects/blockContent";
@@ -61,9 +63,9 @@ export default createSchema({
     route,
     siteConfig,
     person,
-    about,
-    // When added to this list, object types can be used as
     cta,
+    marketDoc,
+    // When added to this list, object types can be used as
     figure,
     internalLink,
     link,
@@ -78,5 +80,7 @@ export default createSchema({
     localeBlockContent,
     localeString,
     productVariant,
+    about,
+    contentUnit,
   ]),
 });

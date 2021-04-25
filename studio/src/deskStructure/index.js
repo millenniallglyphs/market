@@ -3,6 +3,7 @@ import { MdWeb, MdSettings, MdWhatshot, MdLooks } from "react-icons/md";
 import ads from "./ads";
 import categories from "./categories";
 import person from "./person";
+import vendor from "./vendor"
 
 import siteSettings from "./siteSettings";
 
@@ -14,7 +15,6 @@ import ProductsOverviewPreview from "../components/previews/product/ProductsOver
 const hiddenDocTypes = (listItem) =>
   ![
     "category",
-    "person",
     "sampleProject",
     "vendor",
     "siteSettings",
@@ -23,6 +23,8 @@ const hiddenDocTypes = (listItem) =>
     "product",
     "route",
     "siteConfig",
+    "about",
+    "contentUnit"
   ].includes(listItem.getId());
 
 export default () =>
@@ -38,21 +40,65 @@ export default () =>
             S.listItem()
               .title('About')
               .child(
-                S.document()
-                  .schemaType('about')
-                  .documentId('about')
+                S.list()
+                .title('About')
+                .items ([
+                  S.listItem()
+                  .title('About The Market')
+                  .child(
+                    S.document()
+                      .title('About the market')
+                      .schemaType('contentUnit')
+                      .documentId('contentUnit')
+                  )
+                ])
               ),
+            S.documentTypeListItem("vendor").title("Vendors"),
             S.listItem()
-              .title('Vendors')
+                .title('Community')
+                .child(
+                  S.document()
+                      .title('By Laws')
+                      .schemaType('contentUnit')
+                      .documentId('contentUnit')
+                ),
+            S.listItem()
+              .title('Market Documents')
               .child(
                 S.list()
+                .title('Market Documents')
                 .items ([
-                  S.documentTypeListItem("vendor").title("Vendors")
+                  S.documentTypeListItem("marketDoc").title("Market Documents")
                 ])
-              )
+              ),
+            S.listItem()
+                .title('Donate')
+                .child(
+                  S.document()
+                      .title('Donate To the Market')
+                      .schemaType('contentUnit')
+                      .documentId('contentUnit')
+                ),
+            S.listItem()
+                .title('Employment')
+                .child(
+                  S.document()
+                      .title('Employment Listing')
+                      .schemaType('contentUnit')
+                      .documentId('contentUnit')
+                ),
+            vendor
           ])
         ),
-      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      S.listItem()
+          .title('Globals')
+          .child(
+            S.list()
+            .title('Globals')
+            .items ([
+              S.documentTypeListItem('cta').title('CTAs')
+            ])
+          )
     ]);
 
 export const getDefaultDocumentNode = (props) => {

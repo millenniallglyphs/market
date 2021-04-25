@@ -17,7 +17,8 @@
     "@sanity/color-input",
     "vercel-deploy",
     "@sanity/dashboard",
-    "dashboard-widget-vercel"
+    "dashboard-widget-vercel",
+    "dashboard-widget-document-list"
   ],
   "env": {
     "development": {
