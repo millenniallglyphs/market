@@ -1,10 +1,10 @@
-import { MdInfoOutline } from 'react-icons/md';
+import { MdInsertDriveFile } from 'react-icons/md';
 
 export default {
-    name: 'about',
-    title: 'About',
+    name: 'marketDocPage',
+    title: 'Market Documents',
     type: 'document',
-    icon: MdInfoOutline,
+    icon: MdInsertDriveFile,
     fields: [
       {
         name: 'title',
@@ -13,14 +13,14 @@ export default {
       },
       {
         name: 'description',
-        title: 'About the PAFM',
+        title: 'Text',
         type: 'text'
       },
       {
         name: "content",
         type: "array",
-        title: "Add FAQ Item",
-        of: [{ type: "faq" }],
+        title: "Add a Document",
+        of: [{ type: "marketDoc" }],
       },
     ]
   }

@@ -3,7 +3,13 @@ import { MdWeb, MdSettings, MdWhatshot, MdLooks } from "react-icons/md";
 import ads from "./ads";
 import categories from "./categories";
 import person from "./person";
-import vendor from "./vendor"
+import vendor from "./vendor";
+import about from "./about";
+import community from "./community";
+import marketDocuments from "./marketDocuments";
+import donate from "./donate";
+import employment from "./employment";
+import home from "./home"
 
 import siteSettings from "./siteSettings";
 
@@ -23,7 +29,6 @@ const hiddenDocTypes = (listItem) =>
     "product",
     "route",
     "siteConfig",
-    "about",
     "contentUnit"
   ].includes(listItem.getId());
 
@@ -37,57 +42,13 @@ export default () =>
           S.list()
           .title('Pages')
           .items([
-            S.listItem()
-              .title('About')
-              .child(
-                S.list()
-                .title('About')
-                .items ([
-                  S.listItem()
-                  .title('About The Market')
-                  .child(
-                    S.document()
-                      .title('About the market')
-                      .schemaType('contentUnit')
-                      .documentId('contentUnit')
-                  )
-                ])
-              ),
-            S.documentTypeListItem("vendor").title("Vendors"),
-            S.listItem()
-                .title('Community')
-                .child(
-                  S.document()
-                      .title('By Laws')
-                      .schemaType('contentUnit')
-                      .documentId('contentUnit')
-                ),
-            S.listItem()
-              .title('Market Documents')
-              .child(
-                S.list()
-                .title('Market Documents')
-                .items ([
-                  S.documentTypeListItem("marketDoc").title("Market Documents")
-                ])
-              ),
-            S.listItem()
-                .title('Donate')
-                .child(
-                  S.document()
-                      .title('Donate To the Market')
-                      .schemaType('contentUnit')
-                      .documentId('contentUnit')
-                ),
-            S.listItem()
-                .title('Employment')
-                .child(
-                  S.document()
-                      .title('Employment Listing')
-                      .schemaType('contentUnit')
-                      .documentId('contentUnit')
-                ),
-            vendor
+            home,
+            about,
+            vendor,
+            community,
+            marketDocuments,
+            donate,
+            employment,
           ])
         ),
       S.listItem()

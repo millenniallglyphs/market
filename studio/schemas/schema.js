@@ -18,10 +18,12 @@ import siteConfig from "./documents/siteConfig";
 import person from "./documents/person";
 import popup from "./documents/popup";
 import marketDoc from "./documents/marketDoc"
+import faq from "./documents/faq"
 
 // page blocks
 import about from "./Pages/about";
 import contentUnit from "./Pages/contentUnit";
+import marketDocPage from "./Pages/marketDocument";
 
 // Object types
 import blockContent from "./objects/blockContent";
@@ -65,6 +67,8 @@ export default createSchema({
     person,
     cta,
     marketDoc,
+    faq,
+    marketDocPage,
     // When added to this list, object types can be used as
     figure,
     internalLink,
