@@ -1,23 +1,43 @@
 export default {
   widgets: [
     {
-      name: 'project-info'
-    },
-    {
-      name: 'project-users'
+      name: 'document-list',
+      options: {
+        title: 'Vendors',
+        types: ['vendor'],
+        createButtonText: 'Onboard Vendor',
+      },
+      layout: {
+        width: 'medium', 
+      }
     },
     {
       name: 'document-list',
       options: {
-        title: 'Vendors',
-        query: '*[_type == "vendor"]',
-        types: ['vendors']
+        title: 'Last edited',
+        order: '_updatedAt desc',
+        limit: 8
+      },
+      layout: {
+        width: 'medium', 
       }
     },
     {
       name: 'vercel',
       layout: {
-        width: 'full', // full width is recommended!
+        width: 'full', 
+      }
+    },
+    {
+      name: 'project-info',
+      layout: {
+        width: 'medium', 
+      }
+    },
+    {
+      name: 'project-users',
+      layout: {
+        width: 'medium', 
       }
     }
   ]

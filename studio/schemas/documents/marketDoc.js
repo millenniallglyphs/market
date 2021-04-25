@@ -11,7 +11,7 @@ export default {
         {
             title: "Upload Document",
             name: "pafmDoc",
-            type: "image",
+            type: "file",
             options: {
               hotspot: true,
             }

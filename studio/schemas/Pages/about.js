@@ -9,18 +9,23 @@ export default {
       {
         name: 'title',
         title: 'Title',
-        type: 'string'
+        type: 'localeString'
       },
       {
         name: 'description',
         title: 'About the PAFM',
-        type: 'text'
+        type: 'localeText'
       },
       {
         name: "content",
         type: "array",
         title: "Add FAQ Item",
-        of: [{ type: "faq" }],
+        of: [
+          {
+          type: 'reference',
+          to: { type: "vendor" }
+          }
+        ],
       },
     ]
   }

@@ -9,7 +9,12 @@ import community from "./community";
 import marketDocuments from "./marketDocuments";
 import donate from "./donate";
 import employment from "./employment";
-import home from "./home"
+import home from "./home";
+import vendors from "./vendorPage";
+
+import { MdMouse } from 'react-icons/md';
+import { MdPublic } from 'react-icons/md';
+import { MdChromeReaderMode } from 'react-icons/md';
 
 import siteSettings from "./siteSettings";
 
@@ -38,13 +43,14 @@ export default () =>
     .items([
       S.listItem()
         .title('Pages')
+        .icon(MdChromeReaderMode)
         .child(
           S.list()
           .title('Pages')
           .items([
             home,
             about,
-            vendor,
+            vendors,
             community,
             marketDocuments,
             donate,
@@ -53,11 +59,22 @@ export default () =>
         ),
       S.listItem()
           .title('Globals')
+          .icon(MdPublic)
           .child(
             S.list()
             .title('Globals')
             .items ([
-              S.documentTypeListItem('cta').title('CTAs')
+              vendor,
+              S.listItem()
+                .title('CTAs')
+                .icon(MdMouse)
+                .child(
+                  S.list()
+                  .title('Globals')
+                  .items ([
+                    S.documentTypeListItem('cta').title('CTAs')
+                  ])
+                )
             ])
           )
     ]);

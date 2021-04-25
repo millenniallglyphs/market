@@ -9,12 +9,12 @@ export default {
       {
         name: 'title',
         title: 'Title',
-        type: 'string'
+        type: 'localeString'
       },
       {
         name: 'description',
         title: 'Text',
-        type: 'text'
+        type: 'localeText'
       },
       {
         name: "content",

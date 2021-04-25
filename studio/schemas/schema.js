@@ -23,7 +23,8 @@ import faq from "./documents/faq"
 // page blocks
 import about from "./Pages/about";
 import contentUnit from "./Pages/contentUnit";
-import marketDocPage from "./Pages/marketDocument";
+import marketDocument from "./Pages/marketDocument";
+import vendors from "./Pages/vendors";
 
 // Object types
 import blockContent from "./objects/blockContent";
@@ -68,7 +69,8 @@ export default createSchema({
     cta,
     marketDoc,
     faq,
-    marketDocPage,
+    marketDocument,
+    vendors,
     // When added to this list, object types can be used as
     figure,
     internalLink,

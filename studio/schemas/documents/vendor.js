@@ -31,6 +31,17 @@ export default {
       title: "Description",
       type: "blockContent",
     },
+    {
+      name: "parents",
+      title: "Parent categories",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "vendor" }],
+        },
+      ],
+    },
   ],
   preview: {
     select: {

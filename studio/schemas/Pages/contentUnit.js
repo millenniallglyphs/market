@@ -1,4 +1,6 @@
 import { MdShortText } from 'react-icons/md';
+import supportedLanguages from "../locale/supportedLanguages";
+
 
 export default {
     name: 'contentUnit',
@@ -7,14 +9,14 @@ export default {
     icon: MdShortText,
     fields: [
       {
-        name: 'headline',
-        title: 'Headline',
-        type: 'string'
+        name: 'title',
+        title: 'Title',
+        type: 'localeString'
       },
       {
-        name: 'text',
-        title: 'Text',
-        type: 'text'
-      }
+        name: 'description',
+        title: 'About the PAFM',
+        type: 'localeText'
+      },
     ]
   }
