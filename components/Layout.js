@@ -90,10 +90,21 @@ function Layout({ children }) {
       </div>
       <footer className="bg-gray-200">
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-          <a className="mt-3 text-gray-600 hover:underline">
+          <a className="mt-3 text-gray-600 hover:underline" href="https://github.com/millenniallglyphs/market" target="_blank">
                Source Code
           </a>
-          <p className="py-2 text-gray-500 sm:py-0">All rights reserved</p>
+          <div className="flex flex-row">
+                  <Link href="/about">
+                    <a className="mt-3 text-gray-600 hover:underline mx-3">
+                      Employment
+                    </a>
+                  </Link>
+                  <Link href="/vendors">
+                    <a className="mt-3 text-gray-600 hover:underline mx-3">
+                      Documents
+                    </a>
+                  </Link>
+                </div>
         </div>
       </footer>
     </div>

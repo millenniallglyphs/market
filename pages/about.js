@@ -15,13 +15,11 @@ function aboutPage(props) {
       });
     const { title, description } = about[0];
 
-    console.log(title.en)
-
     return(
-        <>
+        <div className="container mx-auto px-6">
             <h3 className="text-gray-700 text-2xl font-medium">{title.en}</h3>
-            <h1 className="text-gray-700 text-2xl font-medium">{description.en}</h1>
-        </>
+            <p>{description.en}</p>
+        </div>
     )
 }
 
