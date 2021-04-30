@@ -16,6 +16,8 @@ import { MdMouse } from 'react-icons/md';
 import { MdPublic } from 'react-icons/md';
 import { MdChromeReaderMode } from 'react-icons/md';
 
+import EditIcon from "part:@sanity/base/edit-icon";
+
 import siteSettings from "./siteSettings";
 
 import TotebagPreview from "../components/previews/banners/swag/TotebagPreview";
@@ -76,7 +78,20 @@ export default () =>
                   ])
                 )
             ])
-          )
+          ),
+      S.listItem()
+        .title("Blog Posts")
+        .schemaType("blogpost")
+        .child(
+          S.documentTypeList("blogpost")
+            .title("Blog Posts")
+            .child((documentId) =>
+              S.document()
+                .documentId(documentId)
+                .schemaType("blogpost")
+                .views([S.view.form().icon(EditIcon)])
+            )
+        )
     ]);
 
 export const getDefaultDocumentNode = (props) => {

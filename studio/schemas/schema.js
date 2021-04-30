@@ -25,6 +25,7 @@ import about from "./Pages/about";
 import contentUnit from "./Pages/contentUnit";
 import marketDocument from "./Pages/marketDocument";
 import vendors from "./Pages/vendors";
+import blogpost from "./Pages/blog";
 
 // Object types
 import blockContent from "./objects/blockContent";
@@ -71,6 +72,7 @@ export default createSchema({
     faq,
     marketDocument,
     vendors,
+    blogpost,
     // When added to this list, object types can be used as
     figure,
     internalLink,
