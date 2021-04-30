@@ -33,10 +33,6 @@
     "tailwindcss": "^1.9.6"
   },
   "keywords": [],
-  "author": "Sanity.io <hello@sanity.io>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sanity-io/sanity-template-nextjs-ecommerce/issues"
-  },
-  "homepage": "https://github.com/sanity-io/sanity-template-nextjs-ecommerce#readme"
+  "author": "Calvin Hutcheon",
+  "license": "MIT"
 }
