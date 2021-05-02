@@ -5,7 +5,7 @@ import supportedLanguages from "../locale/supportedLanguages";
 export default {
     name: 'contentUnit',
     title: 'Content Unit',
-    type: 'document',
+    type: 'object',
     icon: MdShortText,
     fields: [
       {

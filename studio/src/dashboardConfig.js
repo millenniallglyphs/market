@@ -16,7 +16,7 @@ export default {
       options: {
         title: 'Last edited',
         order: '_updatedAt desc',
-        limit: 8
+        limit: 16
       },
       layout: {
         width: 'medium', 

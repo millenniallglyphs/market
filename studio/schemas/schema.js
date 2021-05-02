@@ -8,17 +8,12 @@ import category from "./documents/category";
 import product from "./documents/product";
 import vendor from "./documents/vendor";
 import productVariant from "./documents/productVariant";
-import brand from "./documents/brand";
-import social from "./documents/social";
-import ad from "./documents/ad";
-import swag from "./documents/swag";
 import page from "./documents/page";
 import route from "./documents/route";
-import siteConfig from "./documents/siteConfig";
 import person from "./documents/person";
-import popup from "./documents/popup";
 import marketDoc from "./documents/marketDoc"
 import faq from "./documents/faq"
+import swag from "./documents/swag"
 
 // page blocks
 import about from "./Pages/about";
@@ -26,6 +21,9 @@ import contentUnit from "./Pages/contentUnit";
 import marketDocument from "./Pages/marketDocument";
 import vendors from "./Pages/vendors";
 import blogpost from "./Pages/blog";
+import community from "./Pages/community";
+import donate from "./Pages/donate";
+import employment from "./Pages/employment";
 
 // Object types
 import blockContent from "./objects/blockContent";
@@ -56,16 +54,10 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     product,
-    popup,
     vendor,
     category,
-    brand,
-    social,
-    ad,
-    swag,
     page,
     route,
-    siteConfig,
     person,
     cta,
     marketDoc,
@@ -90,5 +82,8 @@ export default createSchema({
     productVariant,
     about,
     contentUnit,
+    community,
+    donate,
+    employment,
   ]),
 });

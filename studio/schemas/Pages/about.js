@@ -3,7 +3,7 @@ import { MdInfoOutline } from 'react-icons/md';
 export default {
     name: 'about',
     title: 'About',
-    type: 'document',
+    type: 'object',
     icon: MdInfoOutline,
     fields: [
       {

@@ -7,6 +7,6 @@ export default S.listItem()
     .child(
     S.document()
         .title('Donate')
-        .schemaType('contentUnit')
-        .documentId('contentUnit')
+        .schemaType('donate')
+        .documentId('donate')
     )

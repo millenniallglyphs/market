@@ -3,7 +3,7 @@ import { MdStoreMallDirectory } from 'react-icons/md';
 export default {
     name: 'vendors',
     title: 'Vendors',
-    type: 'document',
+    type: 'object',
     icon: MdStoreMallDirectory,
     fields: [
       {

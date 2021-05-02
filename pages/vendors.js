@@ -1,7 +1,6 @@
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "../utils/sanity";
-import ProductsPage from "../components/ProductsPage";
 import VendorList from "../components/VendorList";
 
 const query = `//groq

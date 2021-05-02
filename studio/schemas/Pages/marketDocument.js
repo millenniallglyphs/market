@@ -3,7 +3,7 @@ import { MdInsertDriveFile } from 'react-icons/md';
 export default {
     name: 'marketDocPage',
     title: 'Market Documents',
-    type: 'document',
+    type: 'object',
     icon: MdInsertDriveFile,
     fields: [
       {
