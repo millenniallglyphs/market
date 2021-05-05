@@ -3,7 +3,7 @@ import { MdLocalDrink } from "react-icons/md";
 export default {
   name: "product",
   title: "Product",
-  type: "document",
+  type: "object",
   icon: MdLocalDrink,
   fields: [
     {

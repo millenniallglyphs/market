@@ -9,7 +9,7 @@ function ProductsPage({ vendors }) {
         {vendors.map((vendor) => (
           <div key={vendor._id} {...vendor}>
               <p>
-                Hello World!
+                {vendor.title}
               </p>
             </div>
         ))}

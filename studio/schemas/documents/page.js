@@ -1,6 +1,6 @@
 export default {
   name: "page",
-  type: "document",
+  type: "object",
   title: "Page",
   fieldsets: [
     {

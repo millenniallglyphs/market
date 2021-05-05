@@ -16,19 +16,6 @@ import { MdChromeReaderMode } from 'react-icons/md';
 
 import EditIcon from "part:@sanity/base/edit-icon";
 // Hide document types that we already have a structure definition for
-const hiddenDocTypes = (listItem) =>
-  ![
-    "category",
-    "sampleProject",
-    "vendor",
-    "siteSettings",
-    "ad",
-    "page",
-    "product",
-    "route",
-    "siteConfig",
-    "contentUnit"
-  ].includes(listItem.getId());
 
 export default () =>
   S.list()

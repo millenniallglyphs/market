@@ -53,6 +53,11 @@ function Layout({ children }) {
                       Community
                     </a>
                   </Link>
+                  <Link href="/blog">
+                    <a className="mt-3 text-gray-600 hover:underline mx-3">
+                      Blog
+                    </a>
+                  </Link>
                 </div> 
             </div>
           </div>

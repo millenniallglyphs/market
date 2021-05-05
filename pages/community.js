@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "../utils/sanity";
 
 const query = `//groq
-  *[_id == "contentUnit" ]
+  *[_id == "community" ]
 `;
 function communityPage(props) {
     const { communityData, preview } = props;
@@ -12,7 +12,8 @@ function communityPage(props) {
         initialData: communityData,
         enabled: preview || router.query.preview !== null,
       });
-    const { title, description } = community[0];
+    const { title, description } = community[0].bylaws;
+
 
 
     return(
