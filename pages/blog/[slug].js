@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import ProductPage from "../../components/ProductPage";
 import { getClient, usePreviewSubscription } from "../../utils/sanity";
 
-const query = groq`*[_type == "blog" && slug.current == $slug][0]`;
+const query = groq`*[_type == "blogpost" && slug.current == $slug][0]`;
 
 function BlogPost({ blogData, preview }) {
   const router = useRouter();
@@ -21,14 +21,12 @@ function BlogPost({ blogData, preview }) {
   const {
     _id,
     title,
-    tags,
-    slug,
-    featuredimg,
-    article,
   } = blog;
   return (
     <>
-        <h2>{title}</h2>
+      <div className="container mx-auto px-6">
+        <h2>{title.en}</h2>
+      </div>
     </>
   );
 }
@@ -45,8 +43,10 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
   const paths = await getClient().fetch(
-    `*[_type == "blog" && defined(slug.current)][].slug.current`
+    `*[_type == "blogpost" && defined(slug.current)][].slug.current`
   );
+
+  console.log(paths)
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),

@@ -1,12 +1,15 @@
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "../utils/sanity";
+import { useContext } from 'react';
+import LanguageSelect from '../lib/language'
 
 const query = `//groq
   *[_id == "about" ]
 `;
 
 function aboutPage(props) {
+    const lang = useContext(LanguageSelect)
     const { aboutData, preview } = props;
     const router = useRouter();
     const { data: about } = usePreviewSubscription(query, {
@@ -17,8 +20,15 @@ function aboutPage(props) {
 
     return(
         <div className="container mx-auto px-6">
-            <h3 className="text-gray-700 text-2xl font-medium">{title.en}</h3>
-            <p>{description.en}</p>
+            { title[lang] ? (
+              <>
+                <h3 className="text-gray-700 text-2xl font-medium">{title[lang]}</h3>
+                <p>{description[lang]}</p>
+              </>
+            ) : (
+              <p>no translation</p>
+            )
+            }
         </div>
     )
 }

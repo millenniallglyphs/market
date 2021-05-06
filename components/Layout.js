@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Link from "next/link";
 
-function Layout({ children }) {
+function Layout({select, setLang, options = [], children }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const handleMenu = () => setMenuOpen(!menuOpen);
@@ -9,6 +9,14 @@ function Layout({ children }) {
   const height = {
     minHeight: '90vh',
 }
+
+const renderOptions = () => {
+  return options.map(({ value, label }, index) => (
+    <option value={value} key={index}>
+      {label}
+    </option>
+  ));
+};
 
   return (
     <div className="bg-white">
@@ -20,7 +28,7 @@ function Layout({ children }) {
                 PAFM
               </a>
             </Link>
-            <div className="flex items-center justify-end w-full">
+            <div className="flex items-center justify-center w-full">
 
               <div className="flex sm:hidden">
                 <button
@@ -60,6 +68,9 @@ function Layout({ children }) {
                   </Link>
                 </div> 
             </div>
+                  <select onChange={select} value={setLang}>
+                    {renderOptions()}
+                  </select>
           </div>
           <nav
             className={`${

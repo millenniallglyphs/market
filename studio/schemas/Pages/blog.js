@@ -12,10 +12,14 @@ export default {
             type: 'localeString'
         },
         {
-            name: 'slug',
-            title: 'Slug',
-            type: 'slug',
-        },
+            name: "slug",
+            title: "Slug",
+            type: "slug",
+            options: {
+              source: "title",
+              maxLength: 96,
+            },
+          },
         {
             name: 'tags',
             title: 'Tags',
