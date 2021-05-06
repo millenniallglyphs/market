@@ -19,8 +19,6 @@ function Blog(props) {
     enabled: preview || router.query.preview !== null,
   });
 
-  console.log(blogs)
-
   return (
     <div className="my-8">
       <div className="mt-4">

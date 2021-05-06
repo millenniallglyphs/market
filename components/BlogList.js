@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 function BlogList({ blogs }) {
   return (
@@ -7,9 +8,11 @@ function BlogList({ blogs }) {
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
         {blogs.map((blog) => (
           <div key={blog._id} {...blog}>
-              <p>
-                {blog.title.en}
-              </p>
+              <Link href={`/blog/${blog.slug.current}`}>
+                <a>
+                  {blog.title.en}
+                </a>
+              </Link>
             </div>
         ))}
       </div>

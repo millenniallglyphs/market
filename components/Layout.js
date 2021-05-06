@@ -99,12 +99,12 @@ function Layout({ children }) {
                Source Code
           </a>
           <div className="flex flex-row">
-                  <Link href="/about">
+                  <Link href="/employment">
                     <a className="mt-3 text-gray-600 hover:underline mx-3">
                       Employment
                     </a>
                   </Link>
-                  <Link href="/vendors">
+                  <Link href="/documents">
                     <a className="mt-3 text-gray-600 hover:underline mx-3">
                       Documents
                     </a>
