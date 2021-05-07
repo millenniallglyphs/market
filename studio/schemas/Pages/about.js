@@ -23,7 +23,7 @@ export default {
         of: [
           {
           type: 'reference',
-          to: { type: "vendor" }
+          to: { type: "faq" }
           }
         ],
       },

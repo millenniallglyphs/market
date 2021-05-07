@@ -10,7 +10,7 @@ function BlogList({ blogs }) {
           <div key={blog._id} {...blog}>
               <Link href={`/blog/${blog.slug.current}`}>
                 <a>
-                  {blog.title.en}
+                  {blog.title}
                 </a>
               </Link>
             </div>

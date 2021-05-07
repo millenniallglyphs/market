@@ -9,7 +9,7 @@ export default {
         {
             name: 'title',
             title: 'Title',
-            type: 'localeString'
+            type: 'string'
         },
         {
             name: "slug",
@@ -37,7 +37,7 @@ export default {
         {
             name: 'article',
             title: 'Article',
-            type: 'localeBlockContent',
+            type: 'blockContent',
         }
     ]
 }

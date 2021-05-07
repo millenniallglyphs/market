@@ -25,7 +25,7 @@ function BlogPost({ blogData, preview }) {
   return (
     <>
       <div className="container mx-auto px-6">
-        <h2>{title.en}</h2>
+        <h2>{title}</h2>
       </div>
     </>
   );
