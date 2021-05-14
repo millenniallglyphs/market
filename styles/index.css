@@ -16,3 +16,7 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+.map-container {
+  height: 400px;
+  }

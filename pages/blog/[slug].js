@@ -2,7 +2,7 @@ import Error from "next/error";
 import { groq } from "next-sanity";
 import { useRouter } from "next/router";
 import ProductPage from "../../components/ProductPage";
-import { getClient, usePreviewSubscription } from "../../utils/sanity";
+import { getClient, usePreviewSubscription, urlFor, PortableText } from "../../utils/sanity";
 
 const query = groq`*[_type == "blogpost" && slug.current == $slug][0]`;
 
@@ -21,11 +21,26 @@ function BlogPost({ blogData, preview }) {
   const {
     _id,
     title,
+    tags,
+    featuredimg,
+    article
   } = blog;
   return (
     <>
       <div className="container mx-auto px-6">
+        <img src={urlFor(featuredimg)
+              .auto("format")
+              .width(1200)
+              .fit("crop")
+              .quality(80)}
+          />
         <h2>{title}</h2>
+        <ul class="list-disc">
+              { tags.map((tag, key) => (
+                <li index={key}>{tag}</li>
+              ))}
+          </ul>
+          <PortableText blocks={article} className="text-gray-600" />
       </div>
     </>
   );

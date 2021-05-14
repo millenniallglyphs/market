@@ -1,6 +1,8 @@
 import "../styles/index.css";
 import Layout from "../components/Layout";
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import LanguageSelect from "../lib/language";
 import { useState } from 'react';
 

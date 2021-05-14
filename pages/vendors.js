@@ -38,7 +38,7 @@ function VendorPage(props) {
             <h1>{content.title}</h1>
             <ul class="list-disc">
               { content.contacts.map((contact, key) => (
-                <li index={key}><a href={contact.target}>{contact.label}</a></li>
+                <li index={key}><a href={contact.target} target="_blank">{contact.label}</a></li>
               ))}
             </ul>
             <img src={urlFor(content.logo)

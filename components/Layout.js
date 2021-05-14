@@ -1,5 +1,8 @@
-import { useState, useContext } from "react";
+import React, { useRef, useEffect, useState } from 'react';
 import Link from "next/link";
+import mapboxgl from '!mapbox-gl';
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2VlZGRpc2J1cnNlciIsImEiOiJja29vaXpsNW4wYTFpMm91aWtpZW0yMmdlIn0.Q9M4vOsenIFPbgzCmFa5UQ';
 
 function Layout({select, setLang, options = [], children }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +13,12 @@ function Layout({select, setLang, options = [], children }) {
     minHeight: '90vh',
 }
 
+const mapContainer = useRef(null);
+const map = useRef(null);
+const [lng, setLng] = useState(-123.4304);
+const [lat, setLat] = useState(48.1196);
+const [zoom, setZoom] = useState(16.62);
+
 const renderOptions = () => {
   return options.map(({ value, label }, index) => (
     <option value={value} key={index}>
@@ -18,7 +27,18 @@ const renderOptions = () => {
   ));
 };
 
+useEffect(() => {
+  if (map.current) return; // initialize map only once
+  map.current = new mapboxgl.Map({
+  container: mapContainer.current,
+  style: 'mapbox://styles/seeddisburser/ckooj2hck1du817o172v0b37z',
+  center: [lng, lat],
+  zoom: zoom
+  });
+  });
+
   return (
+    <>
     <div className="bg-white">
       <header>
         <div className="container mx-auto px-6 py-3">
@@ -105,6 +125,11 @@ const renderOptions = () => {
         <main className="my-8">{children}</main>
       </div>
       <footer className="bg-gray-200">
+        <div>
+          <div className="sidebar">
+          </div>
+          <div ref={mapContainer} className="map-container" />
+        </div>
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
           <a className="mt-3 text-gray-600 hover:underline" href="https://github.com/millenniallglyphs/market" target="_blank">
                Source Code
@@ -124,6 +149,7 @@ const renderOptions = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 
