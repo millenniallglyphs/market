@@ -17,9 +17,9 @@ export default {
         type: 'localeText'
       },
       {
-        name: "content",
+        name: "contents",
         type: "array",
-        title: "Add FAQ Item",
+        title: "Add Vendors",
         of: [
           {
           type: 'reference',

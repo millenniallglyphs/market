@@ -5,27 +5,25 @@ import { useContext } from 'react';
 import LanguageSelect from '../lib/language'
 
 const query = `//groq
-  *[_id == "about" ]
+  *[_id == "about" ]{
+    title,
+    description,
+    faqs[]->
+  }
 `;
-
-const faqquery = `//groq
-*[_type == "faq"]`
 
 function aboutPage(props) {
     const lang = useContext(LanguageSelect)
-    const { aboutData, faqData, preview } = props;
+    const { aboutData, preview } = props;
     const router = useRouter();
     const { data: about } = usePreviewSubscription(query, {
         initialData: aboutData,
         enabled: preview || router.query.preview !== null,
       });
-    const { data: faqs } = usePreviewSubscription(faqquery, {
-      initialData: faqData,
-      enabled: preview || router.query.preview !== null,
-    })
-    const { title, description, content } = about[0];
+    
+    const { title, description, faqs } = about[0];
 
-     console.log(faqs)
+    console.log(about[0])
 
     const renderFaq = () => {
       return(
@@ -58,13 +56,11 @@ function aboutPage(props) {
 
 export async function getStaticProps({ params = {}, preview = false }) {
     const aboutData = await getClient(preview).fetch(query);
-    const faqData = await getClient(preview).fetch(faqquery);
   
     return {
       props: {
         preview,
-        aboutData,
-        faqData
+        aboutData
       },
     };
   }

@@ -16,10 +16,21 @@ export default {
       options: {
         title: 'Last edited',
         order: '_updatedAt desc',
-        limit: 16
+        limit: 4
       },
       layout: {
         width: 'medium', 
+      }
+    },
+    {
+      name: 'document-list',
+      options: {
+        title: 'Blog Posts',
+        types: ['blogpost'],
+        createButtonText: 'Create new blog post',
+      },
+      layout: {
+        width: 'full', 
       }
     },
     {

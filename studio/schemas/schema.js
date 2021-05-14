@@ -43,6 +43,7 @@ import textSection from "./objects/textSection";
 import localeString from "./locale/String";
 import localeText from "./locale/Text";
 import localeBlockContent from "./locale/BlockContent";
+import contact from "./locale/target"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -65,6 +66,7 @@ export default createSchema({
     marketDocument,
     vendors,
     blogpost,
+    contact,
     // When added to this list, object types can be used as
     figure,
     internalLink,

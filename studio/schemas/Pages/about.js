@@ -17,7 +17,7 @@ export default {
         type: 'localeText'
       },
       {
-        name: "content",
+        name: "faqs",
         type: "array",
         title: "Add FAQ Item",
         of: [

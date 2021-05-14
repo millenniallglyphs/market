@@ -27,20 +27,24 @@ export default {
       options: { hotspot: true },
     },
     {
+      title: 'Tags',
+      name: 'tags',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags'
+      }
+    },
+    {
+      title: 'Contacts',
+      name: 'contacts',
+      type: 'array',
+      of: [{type: 'contact'}]
+    },
+    {
       name: "description",
       title: "Description",
       type: "blockContent",
-    },
-    {
-      name: "parents",
-      title: "Parent categories",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "vendor" }],
-        },
-      ],
     },
   ],
   preview: {
