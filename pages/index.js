@@ -1,44 +1,56 @@
 import Error from "next/error";
 import { useRouter } from "next/router";
-import { getClient, usePreviewSubscription } from "../utils/sanity";
-import ProductsPage from "../components/ProductsPage";
-import VendorList from "../components/VendorList";
+import { urlFor, getClient, usePreviewSubscription } from "../utils/sanity";
+import { useContext } from 'react';
+import LanguageSelect from '../lib/language'
 
 const query = `//groq
-  *[_type == "vendor" && defined(slug.current)]
+  *[_id == "home"]{
+    title,
+    description,
+    heros[]->
+  }
 `;
 
 function IndexPage(props) {
-  const { vendorsData, preview } = props;
+  const lang = useContext(LanguageSelect)
+  const { homeData, preview } = props;
   const router = useRouter();
 
-  if (!router.isFallback && !vendorsData) {
+  if (!router.isFallback && !homeData) {
     return <Error statusCode={404} />;
   }
 
-  const { data: vendors } = usePreviewSubscription(query, {
-    initialData: vendorsData,
+  const { data: home } = usePreviewSubscription(query, {
+    initialData: homeData,
     enabled: preview || router.query.preview !== null,
   });
 
-  //console.log(vendors)
+  const { title, description, heros } = home[0]
+
+  console.log(home[0])
 
   return (
     <div className="my-8">
       <div className="mt-4">
-        <VendorList vendors={vendors}  />
+        <img src={urlFor(heros[0].backgroundImage)
+              .auto("format")
+              .width(1800)
+              .fit("crop")
+              .quality(80)}
+          />
       </div>
     </div>
   );
 }
 
 export async function getStaticProps({ params = {}, preview = false }) {
-  const vendorsData = await getClient(preview).fetch(query);
+  const homeData = await getClient(preview).fetch(query);
 
   return {
     props: {
       preview,
-      vendorsData,
+      homeData,
     },
   };
 }

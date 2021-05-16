@@ -1,7 +1,10 @@
+import { MdVideoLabel } from 'react-icons/md';
+
 export default {
-  type: "object",
+  type: "document",
   name: "hero",
   title: "Hero",
+  icon: MdVideoLabel,
   fields: [
     {
       name: "heading",

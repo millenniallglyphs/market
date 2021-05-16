@@ -13,6 +13,7 @@ import vendors from "./vendorPage";
 import { MdMouse } from 'react-icons/md';
 import { MdPublic } from 'react-icons/md';
 import { MdChromeReaderMode } from 'react-icons/md';
+import { MdVideoLabel } from 'react-icons/md';
 
 import EditIcon from "part:@sanity/base/edit-icon";
 // Hide document types that we already have a structure definition for
@@ -48,12 +49,30 @@ export default () =>
               S.listItem()
                 .title('CTAs')
                 .icon(MdMouse)
+                .schemaType("cta")
                 .child(
-                  S.list()
-                  .title('Globals')
-                  .items ([
-                    S.documentTypeListItem('cta').title('CTAs')
-                  ])
+                  S.documentTypeList("cta")
+                    .title("Call To Action")
+                    .child((documentId) =>
+                      S.document()
+                        .documentId(documentId)
+                        .schemaType("cta")
+                        .views([S.view.form().icon(EditIcon)])
+                    )
+                ),
+                S.listItem()
+                .title('Hero')
+                .icon(MdVideoLabel)
+                .schemaType("hero")
+                .child(
+                  S.documentTypeList("hero")
+                    .title("hero")
+                    .child((documentId) =>
+                      S.document()
+                        .documentId(documentId)
+                        .schemaType("hero")
+                        .views([S.view.form().icon(EditIcon)])
+                    )
                 )
             ])
           ),

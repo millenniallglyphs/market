@@ -34,6 +34,7 @@ import link from "./objects/link";
 import portableText from "./objects/portableText";
 import simplePortableText from "./objects/simplePortableText";
 import contactInfo from "./objects/contactInfo";
+import home from "./Pages/home"
 
 // Landing page sections
 import hero from "./objects/hero";
@@ -67,6 +68,7 @@ export default createSchema({
     vendors,
     blogpost,
     contact,
+    home,
     // When added to this list, object types can be used as
     figure,
     internalLink,

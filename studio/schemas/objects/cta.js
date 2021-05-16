@@ -1,7 +1,10 @@
+import { MdMouse } from 'react-icons/md';
+
 export default {
   title: "Call to action",
   name: "cta",
-  type: "object",
+  type: "document",
+  icon: MdMouse,
   validation: (Rule) =>
     Rule.custom(
       (fields = {}) =>
@@ -23,8 +26,7 @@ export default {
       title: "Internal link",
       description: "Use this to link between pages on the website",
       name: "route",
-      type: "reference",
-      to: [{ type: "route" }],
+      type: "url",
       fieldset: "link",
     },
     {

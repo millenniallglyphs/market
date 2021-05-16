@@ -7,6 +7,6 @@ export default S.listItem()
     .child(
     S.document()
         .title('Home')
-        .schemaType('contentUnit')
-        .documentId('contentUnit')
+        .schemaType('home')
+        .documentId('home')
     )

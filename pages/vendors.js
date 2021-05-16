@@ -1,7 +1,6 @@
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { urlFor, getClient, usePreviewSubscription, PortableText } from "../utils/sanity";
-import VendorList from "../components/VendorList";
 import { useContext } from 'react';
 import LanguageSelect from '../lib/language'
 
